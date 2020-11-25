@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Agência de Viagens</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+
+        <img src="logo.png" alt="Agência de Viagens" width="80px">
+        <p class="navbar-brand mt-4 ml-3">Agência de Viagens</p>
+
+    </nav>
+
+    <!-- QUADRO CENTRAL: DUAS COLUNAS -->
+
+    <header class="fundo">
+        <div class="fundo2">
+            <div class="container">
+                <div class="row">
+                    <div class="container">
+                        <div class="row text-white m-4">
+
+                            <div class="col-md-8">
+                                <h4>Paisagens</h4>
+                                <img src="canada.jpg" alt="canada" class="img-fluid" id="imgDestino">
+                            </div>
+                            <div class="col-md-3">
+                                <h4>Possíveis Destinos</h4>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="modelo" checked
+                                            id="rbCanada">Canada
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="modelo"
+                                            id="rbFilipinas">Filipinas
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="modelo"
+                                            id="rbAustralia">Australia
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="modelo" id="rbFranca">França
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="modelo" id="rbJapao">Japão
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- INCLUÇÃO DE PARTICIPANTES  -->
+    <!-- COLOCAR os icones e alterar o contorno de entrada -->
+    <form class="bg-danger py-4 text-white">
+        <div class="container">
+            <h4><i>Se inscreva e concorra a viagem dos seus sonhos!</i></h4>
+            <div class="row">
+
+                <div class="input-group col-md-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white border-0" id="inNome"><i class="far fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Informe seu nome" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group col-md-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white border-0" id="inEmail"><i class="far fa-envelope"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Informe seu e-mail" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group-lg col-md-4">
+                    <button class="btn btn-primary btn-lg btn-block" id="btCadastrar">
+                        Inscreva-se
+                    </button>
+                </div>
+
+                <!--  
+                <div class="col-md-4">
+                    <input type="text" class="form-control form-control-lg" placeholder="Informe seu nome" id="inNome"><i class="far fa-user"></i>
+                </div>
+                <div class="col-md-4">
+                    <input type="email" class="form-control form-control-lg" placeholder="Informe seu e-mail" id="inEmail">
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary btn-lg btn-block" id="btCadastrar"><i class="far fa-envelope"></i>
+                        Inscreva-se
+                    </button>
+                </div>
+                -->
+            </div>
+        </div>
+    </form>
+
+    <!-- EXIBINDO PARTICIPANTES -->
+
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1>Participantes</h1>
+            <p>
+            <pre id="outCadastros"></pre>
+            </p>
+        </div>
+    </div>
+
+    <!-- botões sortear, deletar, limpar lista -->
+    <div class="container">
+        <p>
+            <input type="button" value="Sortear" id="btSortear" class="btn btn-success">
+            <input type="button" value="Excluir" id="btExcluir" class="btn btn-warning">
+            <input type="button" value="Limpar Lista" id="btLimpar" class="btn btn-danger">
+        </p>
+
+    </div>
+    </div>
+
+
+    <script src="agencia.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

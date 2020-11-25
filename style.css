@@ -1,0 +1,19 @@
+
+.fundo{
+    background: url(Rio02.jpg);
+    background-size: cover;
+    min-height: 500px;
+    position: relative;
+}
+
+.fundo2{
+    background: rgba(8, 48, 85, 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  
+}
+
+.input-group{
+    height: 35px;
+}
