@@ -49,12 +49,25 @@ const cadastarPessoa = () => {
     let email = inEmail.value;  //obter o conteudo de inEmal
 
 
-      // Validar os dados de entrada
-  if (email == "" || nome == "") {
-    alert("Preencha todos os campos corretamente!");
-    inNome.focus();
-    return;
-  }
+    // Validar os dados de entrada
+    if (email == "" || nome == "") {
+        alert("Preencha todos os campos corretamente!");
+        inNome.focus();
+        return;
+    }
+
+    //Verificar se a pessoa já esta cadastrada
+    if (localStorage.getItem("pessoasCadastradas")) {
+        let participantes = localStorage.getItem("pessoasCadastradas").split(";");
+        for (let i = 0; i < participantes.length; i++) {
+            if (participantes[i] == nome) {
+                alert("Pessoa já cadastrada!")
+                inNome.focus();
+                return;
+            }
+        }
+    }
+
 
     //verificar se há localStorage
     if (localStorage.getItem("pessoasCadastradas")) {
@@ -64,6 +77,7 @@ const cadastarPessoa = () => {
         let pessoasCadastradas = localStorage.getItem("pessoasCadastradas") + ";" + nome;
         let emailCadastrado = localStorage.getItem("emailCadastrado") + ";" + email;
         let destinoCadastrado = localStorage.getItem("destinoCadastrado") + ";" + destino;
+
 
         //salvar
         localStorage.setItem("pessoasCadastradas", pessoasCadastradas);
@@ -75,6 +89,7 @@ const cadastarPessoa = () => {
         localStorage.setItem("emailCadastrado", email);
         localStorage.setItem("destinoCadastrado", destino);
     }
+
 
     mostrarLista();
 
@@ -105,8 +120,12 @@ const mostrarLista = () => {
 
     outCadastros.textContent = linhas;
 
+
+
+
 }
 mostrarLista();
+
 
 
 const excluir = () => {
@@ -162,16 +181,16 @@ btExcluir.addEventListener("click", excluir);
 const limparLista = () => {
     if (!localStorage.getItem("pessoasCadastradas")) {
         alert('Não há Pessoas Cadastradas!')
-    }else{
+    } else {
         if (confirm("Deseja excluir todos os participantes?")) {
             localStorage.removeItem("pessoasCadastradas");
             localStorage.removeItem("emailCadastrado");
             localStorage.removeItem("destinoCadastrado");
         }
-        
+
     }
 
-    
+
     mostrarLista();
 }
 let btLimpar = document.getElementById("btLimpar");
@@ -186,7 +205,7 @@ const sortear = () => {
     }
 
     let participantes = localStorage.getItem("pessoasCadastradas").split(";");
- 
+
 
 
     participantes = participantes[Math.floor(Math.random() * participantes.length)]; //random do nome
@@ -194,7 +213,7 @@ const sortear = () => {
 
     alert(mensagem);
 
-   // console.log(participantes);
+    // console.log(participantes);
 }
 let btSortear = document.querySelector('#btSortear');
 btSortear.addEventListener("click", sortear)

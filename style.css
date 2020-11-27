@@ -18,3 +18,8 @@
 .input-group{
     height: 35px;
 }
+
+.particioanteSelecionado{
+    color:red;
+    font-style: italic;
+}
