@@ -6,8 +6,9 @@
     position: relative;
 }
 
+/*  background: rgba(8, 48, 85, 0.7); */
 .fundo2{
-    background: rgba(8, 48, 85, 0.7);
+    background: rgba(8, 42, 107, 0.63);
     position: absolute;
     width: 100%;
     height: 100%;
