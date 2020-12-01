@@ -19,7 +19,14 @@
     height: 35px;
 }
 
-.particioanteSelecionado{
-    color:red;
-    font-style: italic;
+
+.ParticipanteSelecionado { 
+    color: black; 
+    font-style: italic; 
+    background-color: rgba(43, 198, 226, 0.521);
+    border-left-color: #32a1ce;
+    border-left-style: solid;
 }
+.Normal { 
+    color: black;
+ }
